@@ -1,0 +1,38 @@
+<div class="search-container">
+  <input
+    class="search-bar"
+    type="search"
+    placeholder="Type anything… (e.g., “home”, “дом”, or “будинок”)"
+    [value]="query()"
+    (input)="onInput($event)"
+    (keydown.enter)="onSearch()"
+  />
+  <button class="search-button" title="Search" (click)="onSearch()" [disabled]="isLoading()">
+    <span class="fa-solid fa-magnifying-glass"></span>
+  </button>
+</div>
+
+@if (results.isLoading()) {
+  <div class="spinner"></div>
+}
+
+@if (results.error()) {
+  <div class="error">
+    <span class="error-icon">!</span>
+    <p class="error-message">Could not find any matches.</p>
+  </div>
+}
+
+@if (results.value(); as entries) {
+  <ul class="results">
+    @for (entry of entries; track entry.id) {
+      <li class="card">
+        <a class="card-link" [routerLink]="['/entries', entry.id]">
+          <h3 class="card-ukrainian">{{ entry.ukrainian }}</h3>
+          <span class="card-translation">{{ entry.russian }}</span>
+          <span class="card-translation">{{ entry.english }}</span>
+        </a>
+      </li>
+    }
+  </ul>
+}
