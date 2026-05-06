@@ -2,7 +2,7 @@
   <input
     class="search-bar"
     type="search"
-    placeholder="Type anything… (e.g., “home”, “дом”, or “будинок”)"
+    placeholder="Type anything… (e.g., “home,” “дом,” or “будинок”)"
     [value]="query()"
     (input)="onInput($event)"
     (keydown.enter)="onSearch()"
@@ -25,9 +25,9 @@
 
 @if (results.value(); as entries) {
   <ul class="results">
-    @for (entry of entries; track entry.id) {
+    @for (entry of entries; track entry.slug) {
       <li class="card">
-        <a class="card-link" [routerLink]="['/entries', entry.id]">
+        <a class="card-link" (click)="onEntryClick(entry)">
           <h3 class="card-ukrainian">{{ entry.ukrainian }}</h3>
           <span class="card-translation">{{ entry.russian }}</span>
           <span class="card-translation">{{ entry.english }}</span>

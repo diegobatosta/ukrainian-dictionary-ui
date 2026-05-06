@@ -1,5 +1,5 @@
-export interface SearchResult {
-  id: number;
+export interface Entry {
+  slug: string;
   ukrainian: string;
   russian: string;
   english: string;
