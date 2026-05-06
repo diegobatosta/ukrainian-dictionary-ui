@@ -1,19 +1,21 @@
 import { Component, computed, inject, signal } from '@angular/core';
 import { rxResource } from '@angular/core/rxjs-interop';
-import { RouterLink } from '@angular/router';
+import { Router } from '@angular/router';
 
 import { of } from 'rxjs';
 
 import { EntryService } from '../../../core/services/entry-service';
+import { Entry } from '../../../shared/models/entry';
 
 @Component({
   selector: 'app-search-bar',
-  imports: [RouterLink],
+  imports: [],
   templateUrl: './search-bar.html',
   styleUrl: './search-bar.css',
 })
 export class SearchBar {
-  readonly service = inject(EntryService);
+  private readonly router = inject(Router);
+  private readonly service = inject(EntryService);
 
   query = signal('');
   submittedQuery = signal('');
@@ -38,5 +40,10 @@ export class SearchBar {
 
   onSearch(): void {
     this.submittedQuery.set(this.query());
+  }
+
+  onEntryClick(entry: Entry) {
+    this.service.setSelectedEntry(entry);
+    this.router.navigate(['/entries', entry.slug]);
   }
 }
