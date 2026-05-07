@@ -1,59 +1,26 @@
-# UkrainianDictionaryUi
+# Ukrainian Dictionary UI
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.2.0.
+## Table of contents
 
-## Development server
+1. [Introduction](#introduction)
+2. [Versioning](#versioning)
 
-To start a local development server, run:
+## Introduction
 
-```bash
-ng serve
-```
+This repository has the frontend code for a Ukrainian dictionary that has Russian and English translations. It is written in TypeScript with Angular, HTML, and CSS. The frontend communicates with the [backend](https://github.com/diegobatosta/ukrainian-dictionary) via a REST API.
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+## Versioning
 
-## Code scaffolding
+Use [semantic versioning](https://semver.org/). Because the frontend does not have a public API per se, the `major`, `minor`, and `patch` versions are defined in the subsections below. The major version is not incremented before the v1.0.0 release; in other words, any major changes bump the minor version, instead.
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+### Major versioning
 
-```bash
-ng generate component component-name
-```
+Increment the major version when something about how the user interacts with the app fundamentally changes: removing a major feature, completely redesigning the navigation, or changing a URL structure that breaks existing bookmarks.
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+### Minor versioning
 
-```bash
-ng generate --help
-```
+Increment the minor version when additive changes are made, such as adding new pages or functionalities, or making quality-of-life improvements.
 
-## Building
+### Patch versioning
 
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+Increment the patch version for bug fixes, code refactoring, or library updates.
