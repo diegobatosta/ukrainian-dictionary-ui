@@ -17,7 +17,7 @@ export class EntryService {
   selectedEntry = signal<Entry | null>(null);
 
   search(query: string): Observable<Entry[]> {
-    const params = new HttpParams().set('q', query);
+    const params = new HttpParams().set('query', query);
     return this.http.get<Entry[]>(`${env.baseUrl}/entries`, { params });
   }
 
