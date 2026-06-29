@@ -1,0 +1,14 @@
+{
+  "branches": ["main"],
+  "plugins": [
+    "@semantic-release/commit-analyzer",
+    [
+      "@semantic-release/git",
+      {
+        "assets": ["package.json"],
+        "message": "ci: release ${nextRelease.version}"
+      }
+    ],
+    "@semantic-release/github"
+  ]
+}
