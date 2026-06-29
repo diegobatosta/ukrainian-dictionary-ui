@@ -34,4 +34,3 @@ Review this checklist _before_ accepting the pull request.
 - [ ] New tests were written if new features were added or bugs were fixed.
 - [ ] Existing tests were reviewed and updated if needed.
 - [ ] The changes were tested together with the backend running.
-
