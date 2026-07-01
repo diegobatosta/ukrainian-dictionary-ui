@@ -12,19 +12,20 @@ jobs:
   test:
     runs-on: ubuntu-latest
   
-    - name: Check out the code
-      uses: actions/checkout@v4
+    steps:
+      - name: Check out the code
+        uses: actions/checkout@v4
 
-    - name: Set up Node.js
-      uses: actions/setup-node@v4
-      with:
-        node-version: 24
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 24
 
-    - name: Install the dependencies
-      run: npm ci
+      - name: Install the dependencies
+        run: npm ci
 
-    - name: Run the unit tests
-      run: npm test
+      - name: Run the unit tests
+        run: npm test
 
   release:
     runs-on: ubuntu-latest
