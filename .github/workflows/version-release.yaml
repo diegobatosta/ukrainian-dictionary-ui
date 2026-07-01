@@ -50,6 +50,9 @@ jobs:
         with:
           node-version: 24
 
+      - name: Install the dependencies
+        run: npm ci
+
       - name: Release the version
         run: npx semantic-release
         env:
